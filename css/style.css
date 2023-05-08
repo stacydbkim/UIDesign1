@@ -11,9 +11,15 @@ body {
 	transition: background 500ms ease;
 }
 
+body {
+    color: white;
+    Font-family: courier new;
+    background-color: pink;
+}
+
 p, li {
-	font-size:  22px;
-	line-height: 30px;
+	font-size:  18px;
+	line-height: 24px;
 }
 
 /* adjusting spacing */
@@ -33,6 +39,11 @@ ul, ol {
 img {
 	max-width: 100%;
 	height:  auto;
+}
+
+.cursive {
+    font-family: cursive;
+    background-color: indianred;
 }
 
 /* uncomment the code below to set the grid */
