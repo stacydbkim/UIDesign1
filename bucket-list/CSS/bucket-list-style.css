@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-  font-family: 'Monofett', cursive;
+  font-family: 'Oxygen', sans-serif;;
   color: forestgreen;
   font-size: 58px;
 }
@@ -124,4 +124,16 @@ button[type="enter"] {
 	background-color: yellow;
 }
 
+.footer {
+	height: 20px;
+	display: flex;
+	align-items: left;
+	justify-content: left;
+	margin: 50px;
+	padding-bottom: 10px;
+	position: fixed;
+	bottom: 0;
+	font-size: 10px;
+	color: orange;
+}
 
