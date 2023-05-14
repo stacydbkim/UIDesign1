@@ -1,0 +1,76 @@
+body {
+  font-family: 'Ysabeau', sans-serif;
+  font-size: 16px;
+  padding-top: 6px;
+  text-align: left;
+  justify-content: left;
+  margin-left: 40px;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px grey;
+}
+
+h1 {
+  font-family: 'Ysabeau', sans-serif;
+  font-size: 24px;
+}
+
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+.draggable {
+  cursor: grab;
+  position: absolute;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+#cloud {
+  opacity: 80%;
+  filter: blur(5px);
+  transform: scale(0.9);
+  animation: none;
+  transition: transform 0.7s ease-in-out;
+}
+
+#cloud:hover {
+  transform: scale(1.2);
+}
+
+ img {
+      transition: transform 0.3s ease-in-out;
+      transform: scale(0.3);
+      animation: floating 2.5s ease-in-out infinite;
+  -webkit-
+      filter: drop-shadow(6px 6px 6px grey);
+      filter: drop-shadow(6px 6px 6px grey);
+      position: absolute;
+     bottom: 0;
+     left: 0;
+   }
+
+
+
+/* Define the animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0) scale(0.3);
+  }
+  50% {
+    transform: translateY(-15px) scale(0.32);
+  }
+  100% {
+    transform: translateY(0) scale(0.3);
+  }
+}
