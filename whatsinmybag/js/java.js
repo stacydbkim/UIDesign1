@@ -11,27 +11,46 @@ images.forEach(image => {
   image.style.top = yPos + 'px';
 });
 
+var dragItem = null;
+var offsetX = 0;
+var offsetY = 0;
 
-     var dragItem = null;
-    var offsetX = 0;
-    var offsetY = 0;
+function dragStart(event) {
+  event.preventDefault();
+  if (event.type === 'touchstart') {
+    dragItem = event.target;
+    offsetX = event.touches[0].clientX - dragItem.offsetLeft;
+    offsetY = event.touches[0].clientY - dragItem.offsetTop;
+  } else {
+    dragItem = event.target;
+    offsetX = event.clientX - dragItem.offsetLeft;
+    offsetY = event.clientY - dragItem.offsetTop;
+  }
+}
 
-    function dragStart(event) {
-      event.preventDefault();
-      dragItem = event.target;
-      offsetX = event.clientX - dragItem.offsetLeft;
-      offsetY = event.clientY - dragItem.offsetTop;
+function dragEnd(event) {
+  dragItem = null;
+}
+
+function drag(event) {
+  if (dragItem) {
+    event.preventDefault();
+    if (event.type === 'touchmove') {
+      dragItem.style.left = (event.touches[0].clientX - offsetX) + "px";
+      dragItem.style.top = (event.touches[0].clientY - offsetY) + "px";
+    } else {
+      dragItem.style.left = (event.clientX - offsetX) + "px";
+      dragItem.style.top = (event.clientY - offsetY) + "px";
     }
+  }
+}
 
-    function dragEnd(event) {
-      dragItem = null;
-    }
-
-    function drag(event) {
-      if (dragItem) {
-        event.preventDefault();
-        dragItem.style.left = (event.clientX - offsetX) + "px";
-        dragItem.style.top = (event.clientY - offsetY) + "px";
-      }
-    }
-
+// Add event listeners for touch and mouse events
+images.forEach(image => {
+  image.addEventListener('touchstart', dragStart);
+  image.addEventListener('touchmove', drag);
+  image.addEventListener('touchend', dragEnd);
+  image.addEventListener('mousedown', dragStart);
+  image.addEventListener('mousemove', drag);
+  image.addEventListener('mouseup', dragEnd);
+});
