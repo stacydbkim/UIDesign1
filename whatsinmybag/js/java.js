@@ -54,3 +54,4 @@ images.forEach(image => {
   image.addEventListener('mousemove', drag);
   image.addEventListener('mouseup', dragEnd);
 });
+

@@ -25,6 +25,15 @@ font-style: normal;
 	padding-bottom: 10px;
 }
 
+.footer {
+	position: fixed;
+	align-itmes: left;
+	justify-content: left;
+	width: 100%;
+	bottom: 0;
+	padding-bottom: 15px;
+}
+
 .input-section {
 	height: 50px;
 	background-color: lightyellow;

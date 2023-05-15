@@ -5,6 +5,7 @@
 
 body {
   font-family: 'Ysabeau', sans-serif;
+  margin: 10px;
   font-size: 16px;
   padding-top: 6px;
   text-align: left;
@@ -31,6 +32,23 @@ h1 {
   bottom: 0;
   z-index: -2;
 }
+
+
+#background-audio {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 30px;
+  height: 15px;
+  padding-right: 15px;
+  width: 150px;
+}
+
+#background-audio::-webkit-media-controls-timeline {
+  display: none;
+}
+
+
 
 .draggable {
   cursor: grab;
