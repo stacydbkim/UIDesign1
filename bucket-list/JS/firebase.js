@@ -18,9 +18,10 @@ const firebaseConfig = {
   databaseURL: "https://uidesign-710d2-default-rtdb.firebaseio.com",
 };
 
-// Initialize Firebase
+  // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
+
 
 $(document).ready(function(){
   console.log("ready?")
@@ -33,7 +34,9 @@ $(document).ready(function(){
   })
 })
 
+
 var answerLength = 0;
+  
 
 function showData() {
   console.log("show");
@@ -45,19 +48,14 @@ function showData() {
         console.log(array)
         var appendHtml = ""
         $.each(array,function(i,d){
-          var textBoxHtml = "";
-          if (d.color) {
-            textBoxHtml = `<div class="text-box ${d.progress}" style="background-color:#${d.color}">${d.name}</div>`;
-          } else {
-            var randomColor = Math.floor(Math.random()*16777215).toString(16);
-            textBoxHtml = `<div class="text-box ${d.progress}" style="background-color:#${randomColor}">${d.name}</div>`;
-            updateColor(i, randomColor);
-          }
+          var randomColor = Math.floor(Math.random()*16777215).toString(16);
+          var textBoxHtml = `<div class="text-box ${d.progress}" style="background-color:#${randomColor}">${d.name}</div>`;
           appendHtml += textBoxHtml;
           console.log(d)
         })
         answerLength = array.length
         $(".output-container").html(appendHtml);
+     
       } else {
         alert("No data");
       }
@@ -66,6 +64,7 @@ function showData() {
       alert(error, error);
     });
 }
+
 
 function updateAnswer(d) {
   var randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -84,11 +83,9 @@ function updateAnswer(d) {
     });
 }
 
-function updateColor(index, color) {
-  update(ref(db, `/bucket/${index}`), {
-    color: color
-  })
-}
+var randomColor = Math.floor(Math.random()*16777215).toString(16);
+var textBoxHtml = `<div class="text-box ${d.progress}" style="background-color:#${randomColor}">${d.name}</div>`;
+
 
 
 

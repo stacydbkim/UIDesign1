@@ -74,3 +74,13 @@ h1 {
     transform: translateY(0) scale(0.3);
   }
 }
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+@media screen and (max-width: 768px) {
+  /* CSS rules for smaller screens */
+}
+img, video {
+  max-width: 100%;
+  height: auto;
+}
