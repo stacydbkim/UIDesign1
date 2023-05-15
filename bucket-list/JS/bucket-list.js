@@ -11,6 +11,7 @@ var soundFiles = [
 
 ];
 
+
 // Function to play a random sound from the soundFiles array
 function playRandomSound() {
   // Generate a random index within the length of the soundFiles array
@@ -27,6 +28,7 @@ function playRandomSound() {
 function addText() {
   // Get the input text
   var inputText = document.getElementById("input").value;
+
   var bannedWords = ["fuck", "shit"];
 
   // Check if input text contains any banned words
@@ -88,6 +90,7 @@ function addText() {
 function loadFromLocalStorage() {
   var savedText = localStorage.getItem("text");
   if (savedText) {
+    console.log(savedText)
     var output = document.getElementById("output");
     output.innerHTML = savedText;
 
@@ -133,6 +136,8 @@ function saveToLocalStorage() {
   var output = document.getElementById("output");
   localStorage.setItem("text", output.innerHTML);
 }
+
+
 
 // Call addText() function when "Enter" key is pressed
 var input = document.getElementById("input");
